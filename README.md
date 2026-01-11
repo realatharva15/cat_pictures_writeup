@@ -47,7 +47,11 @@ PORT     STATE    SERVICE
 
 so there is one more service which is open at port 4420
 
-i tried to find SQL vulnerabilities, cat images to perform steganography on, XSS, IDOR but i got no hit. then i found out that the user with the username "user" which included the caption: Knock  knock! Magic numbers: 1111, 2222, 3333, 4444. this had to be a hint since i couldn't find any other leads than this. i sent this over to DeepSeek and it suggested me that it could be an attempt to knocking ports which is a common practice in some ctf based challenges. so i went google dorking until i found this python script on github which would do the knocking for us. before we jump straight into the knocking part we will first understand the core concept of knocking and how it is going to help us in this ctf.
+i tried to find SQL vulnerabilities, cat images to perform steganography on, XSS, IDOR but i got no hit. then i found out that the user with the username "user" which included the caption: Knock  knock! Magic numbers: 1111, 2222, 3333, 4444. this had to be a hint since i couldn't find any other leads than this.
+
+![knockknockonyourdoor](https://github.com/realatharva15/cat_pictures_writeup/blob/main/catpictures.png)
+
+i sent this over to DeepSeek and it suggested me that it could be an attempt to knocking ports which is a common practice in some ctf based challenges. so i went google dorking until i found this python script on github which would do the knocking for us. before we jump straight into the knocking part we will first understand the core concept of knocking and how it is going to help us in this ctf.
 
 so long story short, port knocking is basically a firewall evasion/ authentication technique which includes you sending packets to closed ports in a specific sequence to trigger the firewall to open another port temporarily. the clue "Knock knock! Magic numbers: 1111, 2222, 3333, 4444" was a hint to us that we had to knock these ports in the sequence 1111, 2222, 3333, 4444 to trigger the ftp port going from a filtered port to an open port. so only for some couple of seconds or minutes the ftp port which was earlier seen as filtered will appear open to us and we can access it anonymously. so lets use this script
 
