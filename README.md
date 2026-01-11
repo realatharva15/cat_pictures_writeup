@@ -100,7 +100,9 @@ while going through the file we find out a line which might be the password for 
 
 
 <_ REDACTED_>Please enter yout password: Welcome, catlover! SSH key transfer queued! touch /tmp/gibmethesshkeyAccess Deniedd
-since i cannot show you the password in the writeup, i have censored it. when entered that script will run and it will give you a message saying  Welcome, catlover! SSH key transfer queued!
+since i cannot show you the password in the writeup, i have censored it.
+
+when entered password, that script will run and it will give you a message saying  Welcome, catlover! SSH key transfer queued!
 
 # Phase 2 - Initial Foothold:
 now we will wait for some time for the ssh private keys to get generated and have a cup of coffee in the meanwhile. so after a minute or two a file named id_rsa gets created which contains the private key of the user catlover since it is the only user i can think of right now. we will save the id_rsa in our own attacker machine for using it to access the ssh shell
