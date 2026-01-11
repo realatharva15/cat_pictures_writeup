@@ -2,7 +2,7 @@
 # Author: Atharva Bordavekar
 # Difficulty: Easy
 # Points: 60
-# Vulnerabilities:
+# Vulnerabilities: Port knocking, root shell via cronjob
 
 # Phase 1 - Reconnaissance:
 
